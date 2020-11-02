@@ -4,7 +4,7 @@
     --color-white: #ffffff;
     --color-light-white: #eeeeee;
     --color-dark-white: #bdbdbd;
-    --color-pink: #fe918d;
+    --color-pink: #ff5c6f;
     --color-dark-pink: #ff4242;
     --color-dark-grey: #4d4d4d;
     --color-grey: #616161;
@@ -48,6 +48,8 @@ a {
 button {
     border: 0;
     background: transparent;
+    outline: none;
+    cursor: pointer;
 }
 
 ul {
@@ -133,3 +135,38 @@ p {
     border-radius: 4px;
 }
 
+/* Home */
+#home {
+    background: url('./images/bg.png') center/cover no-repeat;
+    padding: 40px;
+    text-align: center;
+}
+
+.home__avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    border: 3px solid var(--color-white);
+}
+
+.home__avatar img {
+    width: 100%;
+    margin-top: -60px;
+}
+
+.home__title,
+.home__descip {
+    color: var(--color-white);
+}
+
+.home__contact {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    margin: 24px;
+    padding: 8px 12px;
+    border: 2px solid var(--color-white);
+    border-radius: 4px;
+    color: var(--color-white);
+}
