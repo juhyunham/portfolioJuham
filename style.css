@@ -93,6 +93,7 @@ p {
 /* navbar */
 #navbar {
     display: flex;
+    position: relative;
     justify-content: space-between;
     background-color: var(--color-pink);
     align-items: center;
@@ -130,6 +131,7 @@ p {
 
 .navbar__item > button {
     color: var(--color-white);
+    width: 100%;
     padding: 8px 12px;
     font-size: 18px;
     cursor: pointer;
@@ -138,6 +140,16 @@ p {
 .navbar__item > button:hover {
     background-color: var(--color-dark-pink);
     border-radius: var(--size-border-radius);
+}
+
+.navbar__toggle-btn {
+    position: absolute;
+    top: 50%;
+    right: 32px;
+    font-size: 24px;
+    color: var(--color-white);
+    display: none;
+    transform: translateY(-50%);
 }
 
 /* Home */
@@ -439,3 +451,25 @@ p {
     transform: scale(1.1);
     color: var(--color-orange)
 }
+
+@media screen and (max-width: 768px) {
+    .navbar__toggle-btn {
+        display: block;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar__menu {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar__list {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
