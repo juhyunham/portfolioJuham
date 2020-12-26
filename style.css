@@ -95,10 +95,18 @@ p {
     display: flex;
     position: relative;
     justify-content: space-between;
-    background-color: var(--color-pink);
+    background-color: transparent;
     align-items: center;
     color: var(--color-white);
     padding: 16px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+#navbar.fixed {
+    opacity: 1;
+    background-color: var(--color-pink);
 }
 
 .navbar__logo {
@@ -155,8 +163,9 @@ p {
 /* Home */
 #home {
     background: url('./images/bg.png') center/cover no-repeat;
-    padding: 40px;
+    padding: 127px 40px 40px 40px;
     text-align: center;
+    height: 660px;
 }
 
 .home__avatar {
