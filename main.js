@@ -19,9 +19,15 @@ document.addEventListener(`DOMContentLoaded`, function() {
             _this.parentElement.classList.add(`active`)
 
             const button = _this.parentElement.dataset.link 
-            const section = document.querySelector(`#${button}`)
+            const section = document.querySelector(`#${button}`).offsetTop - navbarHeight
+
+            window.scrollTo({
+                top: section,
+                left: 0,
+                behavior: 'smooth'
+            });
             
-            section.scrollIntoView({behavior: "smooth"});
+            // section.scrollIntoView({behavior: "smooth"});
             
         })
     })
