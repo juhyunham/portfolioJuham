@@ -31,4 +31,19 @@ document.addEventListener(`DOMContentLoaded`, function() {
             
         })
     })
+
+    //click contact
+    document.querySelector(`.home__contact`).addEventListener(`click`, function() {
+        const _this = this;
+
+        const link = this.dataset.link;
+        
+        const contactTop =  document.querySelector(`#${link}`).offsetTop - navbarHeight
+
+        window.scrollTo({
+            top: contactTop,
+            left: 0,
+            behavior: 'smooth'
+        });
+    })
 })
