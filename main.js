@@ -10,6 +10,16 @@ document.addEventListener(`DOMContentLoaded`, function() {
         }
     })
 
+    const scrollIntoView = (target) => {
+        const section = document.querySelector(`#${target}`).offsetTop - navbarHeight
+
+        window.scrollTo({
+            top: section,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+
     // click nav
     document.querySelectorAll(`.navbar__list .navbar__item button`).forEach(btn => {
         btn.addEventListener(`click`, function() {
@@ -19,16 +29,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
             _this.parentElement.classList.add(`active`)
 
             const button = _this.parentElement.dataset.link 
-            const section = document.querySelector(`#${button}`).offsetTop - navbarHeight
-
-            window.scrollTo({
-                top: section,
-                left: 0,
-                behavior: 'smooth'
-            });
-            
-            // section.scrollIntoView({behavior: "smooth"});
-            
+            scrollIntoView(button)    
         })
     })
 
@@ -36,14 +37,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
     document.querySelector(`.home__contact`).addEventListener(`click`, function() {
         const _this = this;
 
-        const link = this.dataset.link;
-        
-        const contactTop =  document.querySelector(`#${link}`).offsetTop - navbarHeight
-
-        window.scrollTo({
-            top: contactTop,
-            left: 0,
-            behavior: 'smooth'
-        });
+        const link = _this.dataset.link;
+        scrollIntoView(link)
     })
 })
