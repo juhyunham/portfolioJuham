@@ -185,6 +185,7 @@ p {
 .home__title,
 .home__descip {
     color: var(--color-white);
+    transition: all 1s;
 }
 
 .home__contact {
@@ -195,6 +196,7 @@ p {
     border: 2px solid var(--color-white);
     border-radius: var(--size-border-radius);
     color: var(--color-white);
+    transition: all 1s;
 }
 
 /* Section Common */

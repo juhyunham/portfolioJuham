@@ -40,4 +40,12 @@ document.addEventListener(`DOMContentLoaded`, function() {
         const link = _this.dataset.link;
         scrollIntoView(link)
     })
+
+    // home add hide class
+    const home = document.querySelector(`#home`)
+    const homeHeight = home.getBoundingClientRect().height
+    document.addEventListener(`scroll`, () => {
+        document.querySelector(`.home__container`).style.opacity = 1 - window.scrollY / homeHeight
+    })
+    
 })
