@@ -47,5 +47,17 @@ document.addEventListener(`DOMContentLoaded`, function() {
     document.addEventListener(`scroll`, () => {
         document.querySelector(`.home__container`).style.opacity = 1 - window.scrollY / homeHeight
     })
-    
+
+    //top move button
+    document.addEventListener(`scroll`, () => {
+        if (window.scrollY > homeHeight / 2 ) {
+            document.querySelector(`.arrow-up`).classList.add(`show`)
+        } else {
+            document.querySelector(`.arrow-up`).classList.remove(`show`)
+        }
+    })
+
+    document.querySelector(`.arrow-up`).addEventListener(`click`, function () {
+        scrollIntoView(`home`)
+    })
 })
