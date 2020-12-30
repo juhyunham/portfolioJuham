@@ -78,6 +78,10 @@ document.addEventListener(`DOMContentLoaded`, function() {
         })
     }
 
+    projectCount(`frontend`)
+    projectCount(`backend`)
+    projectCount(`mobile`)
+
     let _prevBtn;
     document.querySelectorAll(`.work__categories .category__btn`).forEach(_btn => {
         _btn.addEventListener(`click`, function() {
@@ -106,8 +110,4 @@ document.addEventListener(`DOMContentLoaded`, function() {
             _prevBtn = _this
         })
     })
-    projectCount(`frontend`)
-    projectCount(`backend`)
-    projectCount(`mobile`)
-    
 })
