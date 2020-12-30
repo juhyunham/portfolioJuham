@@ -60,4 +60,26 @@ document.addEventListener(`DOMContentLoaded`, function() {
     document.querySelector(`.arrow-up`).addEventListener(`click`, function () {
         scrollIntoView(`home`)
     })
+
+    //filtering
+    const project = document.querySelectorAll(`.work__projects .project`);
+    const projectLen = project.length;
+
+    document.querySelector(`.work__categories button[data-name="all"] .category__count`).innerText = projectLen
+
+    const projectCount = (target) => {
+        let countArr = [];
+        document.querySelectorAll(`.work__projects .project`).forEach((project, index) => {
+            if (project.dataset.name === target) {
+                countArr.push(index)
+            } 
+
+            document.querySelector(`.work__categories button[data-name="${target}"] .category__count`).innerText = countArr.length
+        })
+    }
+
+    projectCount(`frontend`)
+    projectCount(`backend`)
+    projectCount(`mobile`)
+    
 })
