@@ -1,7 +1,7 @@
 document.addEventListener(`DOMContentLoaded`, function() {
     //navbar sticky
     const navbar = document.querySelector(`#navbar`);
-    const navbarHeight = navbar.getBoundingClientRect().height;
+    let navbarHeight = navbar.getBoundingClientRect().height;
     window.addEventListener(`scroll`, function() {
         if (window.scrollY > navbarHeight) {
             document.querySelector(`#navbar`).classList.add(`fixed`);
@@ -10,7 +10,10 @@ document.addEventListener(`DOMContentLoaded`, function() {
         }
     })
 
+    // ? 한번만 navbarHeight가 나와서 그런거 같거든? 
+
     const scrollIntoView = (target) => {
+        navbarHeight = navbar.getBoundingClientRect().height;
         const section = document.querySelector(`#${target}`).offsetTop - navbarHeight
 
         window.scrollTo({
@@ -24,6 +27,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
     document.querySelectorAll(`.navbar__list .navbar__item button`).forEach(btn => {
         btn.addEventListener(`click`, function() {
             const _this = this;
+            navbarHeight = navbar.getBoundingClientRect().height;
 
             document.querySelector(`.navbar__list .navbar__item.active`).classList.remove(`active`)
             _this.parentElement.classList.add(`active`)
