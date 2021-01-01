@@ -152,7 +152,7 @@ p {
 
 .navbar__toggle-btn {
     position: absolute;
-    top: 50%;
+    top: 50px;
     right: 32px;
     font-size: 24px;
     color: var(--color-white);
@@ -165,7 +165,7 @@ p {
     background: url('./images/bg.png') center/cover no-repeat;
     padding: 127px 40px 40px 40px;
     text-align: center;
-    height: 660px;
+    height: 44em;
 }
 
 .home__avatar {
@@ -431,7 +431,7 @@ p {
 }
 
 .project__description h3 {
-    color: var(--color-white);
+    color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -441,6 +441,7 @@ p {
     left: 50%;
     width: 25px;
     height: 2px;
+    transform: translateX(-50%);
     background-color: var(--color-dark-white);
     margin-left: -12.5px;
 }
@@ -501,11 +502,16 @@ p {
     #navbar {
         flex-direction: column;
         align-items: flex-start;
+        background-color: var(--color-pink);
     }
 
     .navbar__menu {
         display: none;
         width: 100%;
+    }
+
+    .navbar__menu.open {
+        display: block;
     }
 
     .navbar__list {

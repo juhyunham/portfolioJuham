@@ -33,6 +33,23 @@ document.addEventListener(`DOMContentLoaded`, function() {
         })
     })
 
+    //nav toggle button for small screen
+    const navToggleBtn = document.querySelector(`.navbar__toggle-btn`);
+    const navMenu = document.querySelector(`.navbar__menu`);
+
+    navToggleBtn.addEventListener(`click`, function() {
+        const _this = this;
+
+        if (_this.querySelector(`i`).classList.contains(`fa-bars`)) {
+            _this.querySelector(`i`).className = `fas fa-times`
+        } else {
+            _this.querySelector(`i`).className = `fas fa-bars`
+        }
+
+        navMenu.classList.toggle(`open`);
+    })
+
+
     //click contact
     document.querySelector(`.home__contact`).addEventListener(`click`, function() {
         const _this = this;
