@@ -481,7 +481,7 @@ p {
     position: fixed;
     bottom: 35px;
     right: 10px;
-    font-size: 30px;
+    font-size: 20px;
     padding: 10px;
     background-color: var(--color-blue);
     color: var(--color-white);
@@ -553,10 +553,19 @@ p {
         flex-grow: 1;
     }
 
+    .work__categories {
+        margin: 0;
+    }
+
     .category__btn {
         white-space: nowrap;
         margin-top: 10px;
         text-align: left;
+        width: calc(50% - 4%);
+        padding: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
