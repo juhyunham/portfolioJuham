@@ -28,7 +28,6 @@
         transition: 1s;
         transform: rotateY(0deg);
         transform-style: preserve-3d; 
-        transform-origin: left;
     }
 
     .card_side {
@@ -42,6 +41,7 @@
         height: 100%;
         border-radius: .5em;
         font-size: 1.5rem;
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
 
@@ -56,7 +56,7 @@
     }
 
     .world:hover .card {
-        transform: rotateY(-180deg);
+        transform: rotateY(180deg);
     }
 
 
