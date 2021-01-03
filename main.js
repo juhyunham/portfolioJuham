@@ -10,8 +10,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
         }
     })
 
-    // ? 한번만 navbarHeight가 나와서 그런거 같거든? 
-
     const scrollIntoView = (target) => {
         navbarHeight = navbar.getBoundingClientRect().height;
         const section = document.querySelector(`#${target}`).offsetTop - navbarHeight
