@@ -165,7 +165,7 @@ p {
     background: url('./images/bg.png') center/cover no-repeat;
     padding: 127px 40px 40px 40px;
     text-align: center;
-    height: 44em;
+    height: 40em;
 }
 
 .home__avatar {
@@ -199,6 +199,10 @@ p {
     transition: all 1s;
 }
 
+.home__contact:hover {
+    background-color: var(--color-dark-pink);
+}
+
 /* Section Common */
 .section__container {
     max-width: 1200px;
@@ -206,7 +210,7 @@ p {
 }
 
 .section {
-    padding: 50px 0;
+    padding: 50px 16px;
     text-align: center;
     margin: 0 auto;
 }
@@ -496,6 +500,15 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+    :root {
+        /* Font size */
+        --font-large: 30px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;
+    }
+
     .navbar__toggle-btn {
         display: block;
     }
@@ -527,6 +540,7 @@ p {
     .about__majors {
         flex-direction: column;
         align-items: center;
+        margin: 20px 0;
     }
 
     .about__jobs {
@@ -534,7 +548,7 @@ p {
     }
 
     .major {
-        margin-bottom: 38px;
+        margin-bottom: 30px;
     }
 
     .skillset {

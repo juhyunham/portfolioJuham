@@ -11,7 +11,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
     })
 
     const scrollIntoView = (target) => {
-        navbarHeight = navbar.getBoundingClientRect().height;
         const section = document.querySelector(`#${target}`).offsetTop - navbarHeight
 
         window.scrollTo({
