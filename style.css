@@ -485,6 +485,8 @@ p {
     position: fixed;
     bottom: 35px;
     right: 10px;
+    width: 40px;
+    height: 40px;
     font-size: 20px;
     padding: 10px;
     background-color: var(--color-blue);
