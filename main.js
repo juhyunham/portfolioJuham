@@ -129,11 +129,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
         })
     })
 
-    //큰골격 잡기
-    //1. 모든 섹션 요소들을 가지고온다. 
-    //2. intersectionObserver를 이용해서 모든 섹션들을 관찰한다.
-    //3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화시킨다. 
-
     const sectionIds = [
         '#home',
         '#about',
@@ -141,4 +136,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
         '#word',
         '#contact'
     ]
+
+
 })
