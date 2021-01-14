@@ -136,6 +136,4 @@ document.addEventListener(`DOMContentLoaded`, function() {
         '#word',
         '#contact'
     ]
-
-
 })
