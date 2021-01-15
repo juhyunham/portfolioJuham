@@ -16,11 +16,14 @@ document.addEventListener(`DOMContentLoaded`, () => {
     const header = document.querySelector(`.header`)
     let headerHeight = header.offsetHeight; 
     let sectionTop = [];
+    let flag = false;
 
     for (let i = 0; i < sections.length; i++) {
         sectionTop.push(sections[i].getBoundingClientRect().top + window.scrollY)
     }
-    
+
+    header.classList.add(`invisible`)
+
     const sectionTopFun = () => {
         let temp = 0;
         for (let i = 0; i < sectionTop.length; i++) {
@@ -35,28 +38,42 @@ document.addEventListener(`DOMContentLoaded`, () => {
         
         menu[temp].classList.add(`active`)
 
-        // 형변환 쓴거 이상하다고 느껴짐.
-        if (Number(menu[temp].dataset.menu) === menu.length - 1) {
-            if (sectionTop[temp] < window.scrollY) {
-                header.classList.add(`invisible`)
-            }
-        } else {
+        if (sectionTop[temp] < window.scrollY) {
             header.classList.remove(`invisible`)
+        } 
+
+        if ( sectionTop[0] > window.scrollY ) {
+            header.classList.add(`invisible`)
         }
     }
 
     window.addEventListener(`scroll`, () => {
-        sectionTopFun()
+        if (flag === false) {
+            sectionTopFun()
+            console.log(`scroll`)
+        }
     });
 
     menu.forEach(item => {
         item.addEventListener(`click`, function() {
-            const _this = this;
+            if (flag === false) {
+                flag = true;
+                const _this = this;
 
-            // 사실 dataset으로 쓴게 고민되긴함.
-            const _thisTop =  sectionTop[_this.dataset.menu] - headerHeight;
+                const _thisTop =  sectionTop[_this.dataset.menu];
 
-            window.scrollTo({top:  _thisTop,  behavior: 'smooth'});
+                if (document.querySelector(`.header li.active`) !== null) {
+                    document.querySelector(`.header li.active`).classList.remove(`active`)
+                }
+
+                _this.classList.add(`active`)
+
+                window.scrollTo({top:  _thisTop - headerHeight,  behavior: 'smooth'})
+
+                setTimeout(function() {
+                    flag = false;
+                } , 700) 
+            }
         })
     })
 })
