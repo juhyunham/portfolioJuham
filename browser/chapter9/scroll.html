@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul , li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .header {
+        background-color: skyblue;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    li {
+        margin: 0 4px;
+    }
+
+    li button {
+        padding: 20px;
+        background-color: #fff;
+        border: 0;
+        color: #19191a;
+        font-size: 15px;
+    }
+
+    li.active button {
+        background-color: #19191a;
+        color: #fff;
+    }
+
+    .section {
+        height: 1500px;
+        font-size: 70px;
+    }
+
+    .section1 {
+        margin-top: 55px;
+        background: tomato;
+    }
+
+    .section2 {
+        background: orange;
+    }
+
+    .section3 {
+        background: greenyellow;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <ul>
+                <li class="active" data-menu="0"><button type="button">menu1</button></li>
+                <li data-menu="1"><button type="button">menu2</button></li>
+                <li data-menu="2"><button type="button">menu3</button></li>
+            </ul>
+        </div>
+        <div class="box">
+            <div class="section section1">
+                section1
+            </div>
+            <div class="section section2">
+                section2
+            </div>
+            <div class="section section3">
+                section3
+            </div>
+        </div>
+    </div>
+    <script src="./scroll.js"></script>
+</body>
+</html>
