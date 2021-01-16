@@ -1,21 +1,29 @@
 document.addEventListener(`DOMContentLoaded`, () => {
-    const section = document.querySelectorAll(`.section`)
+    const banner = document.querySelector(`.banner`);
     const header = document.querySelector(`.header`);
-    const menu = document.querySelectorAll(`nav li`)
+    const topZone = document.querySelector(`.top_zone`);
+    const section = document.querySelectorAll(`.section`);
+    const menu = document.querySelectorAll(`nav li`);
     let flag = true;
 
     const sectionTop = [] 
     section.forEach(item => {
-        sectionTop.push(item.getBoundingClientRect().top + window.scrollY - header.offsetHeight)
+        sectionTop.push(item.getBoundingClientRect().top + window.scrollY)
     })
     
     window.addEventListener(`scroll`, () => {
         if (flag) {
-            header.classList.add(`fixed`);
+            if (topZone.offsetHeight <= window.scrollY) {
+                header.style.transform = `translateY(${banner.offsetHeight}px)`
+                header.classList.add(`fixed`);
+            } else {
+                header.style.transform = ``
+                header.classList.remove(`fixed`);
+            }
 
             let i = 0;
             for (i = 0 ; i < section.length; i++) {
-                if (sectionTop[i] >= window.scrollY) {
+                if (sectionTop[i] - header.offsetHeight - banner.offsetHeight >= window.scrollY) {
                     break;
                 }
             }
@@ -44,11 +52,11 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
                 _this.classList.add(`active`)
 
-                window.scrollTo({top: sectionTop[index] - header.offsetHeight , behavior: 'smooth' })
+                window.scrollTo({top: sectionTop[index] - header.offsetHeight - banner.offsetHeight , behavior: 'smooth' })
 
                 setTimeout(() => {
                     flag = true
-                } , 600)
+                } , 700)
             }
         })
     })

@@ -10,15 +10,30 @@
             padding: 0;
         }
 
+        .banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background-color: green;
+            color: #fff;
+            font-size: 28px;
+            text-align: center;
+        }
+
         .header {
-            position: relative;
+            position: fixed;
+            top: 0;
             left: 0;
             right: 0;
             background-color: tomato;
+            transform: translateY(-200%);
         }
 
         .header.fixed {
-            position: fixed;
+            transform: translateY(0%);
+            
         }
 
         .header nav ul {
@@ -46,7 +61,7 @@
             background-color: red;
         }
 
-        .top_section {
+        .top_zone {
             height: 2000px;
             background-color: purple;
         }
@@ -72,20 +87,24 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <nav>
-            <ul>
-                <li><button type="button" class="menu">menu1</button></li>
-                <li><button type="button" class="menu">menu2</button></li>
-                <li><button type="button" class="menu">menu3</button></li>
-            </ul>
-        </nav>
+    <div class="banner">banner</div>
+    <div class="wrap">
+        <div class="header">
+            <nav>
+                <ul>
+                    <li><button type="button" class="menu">menu1</button></li>
+                    <li><button type="button" class="menu">menu2</button></li>
+                    <li><button type="button" class="menu">menu3</button></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <div class="top_zone"></div>
+        <div class="section section1">SECTION1</div>
+        <div class="section section2">SECTION2</div>
+        <div class="section section3">SECTION3</div>
     </div>
-
-    <div class="top_section"></div>
-    <div class="section section1">SECTION1</div>
-    <div class="section section2">SECTION2</div>
-    <div class="section section3">SECTION3</div>
+    
 
     <script src="./scroll.js"></script>
 </body>
