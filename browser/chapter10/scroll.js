@@ -1,10 +1,13 @@
 document.addEventListener(`DOMContentLoaded`, () => {
     const banner = document.querySelector(`.banner`);
     const header = document.querySelector(`.header`);
+    const tabmenu = document.querySelector(`.tabmenu`);
     const topZone = document.querySelector(`.top_zone`);
     const section = document.querySelectorAll(`.section`);
     const menu = document.querySelectorAll(`nav li`);
+    let prevScroll = window.scrollY
     let flag = true;
+
 
     const sectionTop = [] 
     section.forEach(item => {
@@ -16,6 +19,13 @@ document.addEventListener(`DOMContentLoaded`, () => {
             if (topZone.offsetHeight <= window.scrollY) {
                 header.style.transform = `translateY(${banner.offsetHeight}px)`
                 header.classList.add(`fixed`);
+
+                console.log(prevScroll, window.scrollY)
+                if (prevScroll < window.scrollY) {
+                    tabmenu.style.transform = `translateY(${banner.offsetHeight + header.offsetHeight}px)`
+                } else {
+                    tabmenu.style.transform = ``
+                }
             } else {
                 header.style.transform = ``
                 header.classList.remove(`fixed`);
@@ -35,6 +45,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
             if (i !== 0) {
                 menu[i - 1].classList.add(`active`)
             }
+
+            prevScroll = window.scrollY
         }
     })
 
