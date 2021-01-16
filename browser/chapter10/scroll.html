@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            position: relative;
+            left: 0;
+            right: 0;
+            background-color: tomato;
+        }
+
+        .header.fixed {
+            position: fixed;
+        }
+
+        .header nav ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            justify-content: center;
+        }
+
+        .header nav li {
+            list-style: none;
+            margin: 0 5px;
+        }
+
+        .header nav li button {
+            padding: 20px;
+            font-size: 15px;
+            background-color: #fff;
+            border: 0;
+            outline: none;
+        }
+
+        .header nav li.active button {
+            background-color: red;
+        }
+
+        .top_section {
+            height: 2000px;
+            background-color: purple;
+        }
+
+        .section {
+            height: 1000px;
+            color: #19191a;
+            font-size: 30px;
+        }
+
+        .section1 {
+            background-color: red;
+        }
+
+        .section2 {
+            background-color: orange;
+        }
+
+        .section3 {
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <ul>
+                <li><button type="button" class="menu">menu1</button></li>
+                <li><button type="button" class="menu">menu2</button></li>
+                <li><button type="button" class="menu">menu3</button></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="top_section"></div>
+    <div class="section section1">SECTION1</div>
+    <div class="section section2">SECTION2</div>
+    <div class="section section3">SECTION3</div>
+
+    <script src="./scroll.js"></script>
+</body>
+</html>

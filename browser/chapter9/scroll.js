@@ -50,7 +50,6 @@ document.addEventListener(`DOMContentLoaded`, () => {
     window.addEventListener(`scroll`, () => {
         if (flag === false) {
             sectionTopFun()
-            console.log(`scroll`)
         }
     });
 
@@ -75,5 +74,5 @@ document.addEventListener(`DOMContentLoaded`, () => {
                 } , 700) 
             }
         })
-    })
+    });
 })
