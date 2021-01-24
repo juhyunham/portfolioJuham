@@ -20,7 +20,6 @@ document.addEventListener(`DOMContentLoaded`, () => {
                 header.style.transform = `translateY(${banner.offsetHeight}px)`
                 header.classList.add(`fixed`);
 
-                console.log(prevScroll, window.scrollY)
                 if (prevScroll < window.scrollY) {
                     tabmenu.style.transform = `translateY(${banner.offsetHeight + header.offsetHeight}px)`
                 } else {
