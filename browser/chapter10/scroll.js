@@ -50,7 +50,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     })
 
     menu.forEach(item => {
-        item.addEventListener(`click`, function() {
+        item.addEventListener(`click`, function ()  {
             if (flag) {
                 flag = false
                 const _this = this
