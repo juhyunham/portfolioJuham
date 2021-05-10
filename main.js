@@ -26,7 +26,9 @@ document.addEventListener(`DOMContentLoaded`, function() {
             const _this = this;
             navbarHeight = navbar.getBoundingClientRect().height;
 
-            document.querySelector(`.navbar__list .navbar__item.active`).classList.remove(`active`)
+            if (document.querySelector(`.navbar__list .navbar__item.active`) !== null) {
+                document.querySelector(`.navbar__list .navbar__item.active`).classList.remove(`active`)
+            }
             _this.parentElement.classList.add(`active`)
 
             const button = _this.parentElement.dataset.link 
@@ -129,10 +131,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
         })
     })
 
-    // 1. 모든 섹션 요소들을 가지고 온다 
-    // 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다.
-    // 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다.
-
     const sectionIds = [
         'home',
         'about',
@@ -144,6 +142,17 @@ document.addEventListener(`DOMContentLoaded`, function() {
     const sections = sectionIds.map(id => document.querySelector(`#${id}`));
     const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`))
 
+    let selectedNavItem = navItems[0];
+    let selectedNavIndex = 0;
+    const selectNavItem = (selected) => {
+        if (selectedNavItem.classList.contains(`active`) !== null) {
+            selectedNavItem.classList.remove(`active`);
+        }
+
+        selectedNavItem = navItems[selectedNavIndex];
+        selectedNavItem.classList.add(`active`)
+    }
+
     const observerOptions = {
         root: null,
         rootMargin: `0px`,
@@ -152,10 +161,28 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
     const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
-            console.log(entry.target)
+            if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+                const index = sectionIds.indexOf(`${entry.target.id}`)
+                
+                if (entry.boundingClientRect.y <= 0) {
+                    selectedNavIndex = index + 1
+                } else {
+                    selectedNavIndex = index - 1
+                }
+            }
         })
     }
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     sections.forEach(section => observer.observe(section))
+
+    window.addEventListener(`scroll`, () => {
+        if (window.scrollY === 0) {
+            selectedNavIndex = 0
+        } else if (window.scrollY + window.innerHeight === document.body.clientHeight) {
+            selectedNavIndex = navItems.length - 1
+        }
+
+        selectNavItem(navItems[selectedNavIndex])
+    })
 })
