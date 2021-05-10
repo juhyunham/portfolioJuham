@@ -151,18 +151,41 @@ p {
 }
 
 .navbar__toggle-btn {
+    display: none;
     position: absolute;
     top: 50px;
     right: 32px;
     font-size: 24px;
     color: var(--color-white);
-    display: none;
     transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.navbar__toggle-btn .bar1, 
+.navbar__toggle-btn .bar2,
+.navbar__toggle-btn .bar3 {
+    width: 35px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: all .4s;
+}
+
+.navbar__toggle-btn.change .bar1 {
+    transform: rotate(-45deg) translate(-5px, 5px)
+}
+
+.navbar__toggle-btn.change .bar2 {
+    opacity: 0;
+}
+
+.navbar__toggle-btn.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px)
 }
 
 /* Home */
 #home {
-    background: url('./images/bg.png') center/cover no-repeat;
+    background: url('../../images/bg.png') center/cover no-repeat;
     padding: 127px 40px 40px 40px;
     text-align: center;
     height: 40em;
@@ -489,11 +512,11 @@ p {
     height: 40px;
     font-size: 20px;
     padding: 10px;
-    background-color: var(--color-blue);
-    color: var(--color-white);
     border-radius: 50%;
     transition: all .5s;
     pointer-events: none;
+    background-image: url(../../images/btn_up.png);
+    background-size: 100%;
 }
 
 .arrow-up.show {

@@ -41,14 +41,9 @@ document.addEventListener(`DOMContentLoaded`, function() {
     const navMenu = document.querySelector(`.navbar__menu`);
 
     navToggleBtn.addEventListener(`click`, function() {
-        const _this = this;
+        const _thisBtn = this;
 
-        if (_this.querySelector(`i`).classList.contains(`fa-bars`)) {
-            _this.querySelector(`i`).className = `fas fa-times`
-        } else {
-            _this.querySelector(`i`).className = `fas fa-bars`
-        }
-
+        _thisBtn.classList.toggle(`change`);
         navMenu.classList.toggle(`open`);
     })
 
