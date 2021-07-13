@@ -32,6 +32,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
             _this.parentElement.classList.add(`active`)
 
             const button = _this.parentElement.dataset.link 
+
             scrollIntoView(button)    
         })
     })
@@ -131,6 +132,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
         'about',
         'skills',
         'work',
+        'testimonial',
         'contact'
     ]
 
