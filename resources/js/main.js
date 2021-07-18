@@ -78,27 +78,31 @@ document.addEventListener(`DOMContentLoaded`, function() {
     })
 
     //filtering
-    const project = document.querySelectorAll(`.work__projects .project`);
-    const projectLen = project.length;
+    // const project = document.querySelectorAll(`.work__projects .project`);
+    // const projectLen = project.length;
 
-    document.querySelector(`.work__categories button[data-filter="all"] .category__count`).innerText = projectLen
+    // document.querySelector(`.work__categories button[data-filter="all"] .category__count`).innerText = projectLen
 
-    const projectCount = (target) => {
-        let countArr = [];
-        document.querySelectorAll(`.work__projects .project`).forEach((_project, _index) => {
-            if (_project.dataset.type === target) {
-                countArr.push(_index)
-            } 
+    // const projectCount = (target) => {
+    //     let countArr = [];
+    //     document.querySelectorAll(`.work__projects .project`).forEach((_project, _index) => {
+    //         if (_project.dataset.type === target) {
+    //             countArr.push(_index)
+    //         } 
 
-            document.querySelector(`.work__categories button[data-filter="${target}"] .category__count`).innerText = countArr.length
-        })
-    }
+    //         console.log(target)
 
-    projectCount(`frontend`)
-    projectCount(`backend`)
-    projectCount(`mobile`)
+    //         if (target !== undefined) {
+    //             document.querySelector(`.work__categories button[data-filter="${target}"] .category__count`).innerText = countArr.length
+    //         }
+    //     })
+    // }
 
-    let _prevBtn;
+    // projectCount(`frontend`)
+    // projectCount(`backend`)
+    // projectCount(`mobile`)
+
+    // let _prevBtn;
     // document.querySelectorAll(`.work__categories .category__btn`).forEach(_btn => {
     //     _btn.addEventListener(`click`, function() {
     //         const _this = this
