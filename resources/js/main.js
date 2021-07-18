@@ -99,33 +99,33 @@ document.addEventListener(`DOMContentLoaded`, function() {
     projectCount(`mobile`)
 
     let _prevBtn;
-    document.querySelectorAll(`.work__categories .category__btn`).forEach(_btn => {
-        _btn.addEventListener(`click`, function() {
-            const _this = this
-            document.querySelector(`.work__categories .category__btn.active`).classList.remove(`active`)
-            _this.classList.add(`active`)
+    // document.querySelectorAll(`.work__categories .category__btn`).forEach(_btn => {
+    //     _btn.addEventListener(`click`, function() {
+    //         const _this = this
+    //         document.querySelector(`.work__categories .category__btn.active`).classList.remove(`active`)
+    //         _this.classList.add(`active`)
 
-            if (_this !== _prevBtn) {
-                document.querySelector(`.work__projects`).classList.add(`work__animation`)
-            }
+    //         if (_this !== _prevBtn) {
+    //             document.querySelector(`.work__projects`).classList.add(`work__animation`)
+    //         }
     
-            document.querySelectorAll(`.work__projects .project`).forEach((_project, _index) => {
-                if (_this.dataset.filter === `all` || _this.dataset.filter === _project.dataset.type) {
-                    _project.classList.remove(`invisible`)
-                } else {
-                    _project.classList.add(`invisible`)
-                }
-            })
+    //         document.querySelectorAll(`.work__projects .project`).forEach((_project, _index) => {
+    //             if (_this.dataset.filter === `all` || _this.dataset.filter === _project.dataset.type) {
+    //                 _project.classList.remove(`invisible`)
+    //             } else {
+    //                 _project.classList.add(`invisible`)
+    //             }
+    //         })
 
-            let animationDelay;
-            clearTimeout(animationDelay)
-            animationDelay = setTimeout(() => {
-                document.querySelector(`.work__projects`).classList.remove(`work__animation`)
-            }, 300)
+    //         let animationDelay;
+    //         clearTimeout(animationDelay)
+    //         animationDelay = setTimeout(() => {
+    //             document.querySelector(`.work__projects`).classList.remove(`work__animation`)
+    //         }, 300)
 
-            _prevBtn = _this
-        })
-    })
+    //         _prevBtn = _this
+    //     })
+    // })
 
     const sectionIds = [
         'home',

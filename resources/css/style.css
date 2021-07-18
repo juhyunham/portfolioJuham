@@ -405,6 +405,7 @@ p {
 
 .work__projects {
     display: flex;
+    margin-top: 30px;
     flex-wrap: wrap;
     justify-content: center;
     opacity: 1;
@@ -575,7 +576,7 @@ p {
 
     .navbar__item {
         display: inline-flex;
-        width: calc(50% - 3%);
+        width: calc(50% - 4%);
     }
 
     .about__majors {
