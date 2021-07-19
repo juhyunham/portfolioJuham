@@ -77,6 +77,8 @@ document.addEventListener(`DOMContentLoaded`, function() {
         scrollIntoView(`home`)
     })
 
+    document.querySelector(`.category__count`).innerText = document.querySelectorAll(`.work__projects a`).length
+
     //filtering
     // const project = document.querySelectorAll(`.work__projects .project`);
     // const projectLen = project.length;
