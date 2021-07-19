@@ -512,8 +512,17 @@ p {
 }
 
 .contact__links {
-    font-size: var(--font-large);
-    margin: 24px 0;
+    margin: 10px 0;
+}
+
+.contact__links a {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.contact__links a img {
+    width: 100%;
 }
 
 .contact__links i {
