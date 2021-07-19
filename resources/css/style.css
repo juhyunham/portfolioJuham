@@ -624,6 +624,10 @@ p {
         width: 100%;
     }
 
+    ..work__projects {
+        margin: 0;
+    }
+
     .project {
         flex-grow: 1;
     }
@@ -643,5 +647,5 @@ p {
         justify-content: center;
     }
 }
-}
+
 
