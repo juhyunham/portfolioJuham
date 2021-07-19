@@ -404,11 +404,14 @@ p {
 }
 
 .work__projects {
-    display: flex;
     margin: 10px 100px 30px;
-    flex-wrap: wrap;
     opacity: 1;
     transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects .projects {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .work__projects.work__animation {
