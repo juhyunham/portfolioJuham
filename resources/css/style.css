@@ -624,7 +624,7 @@ p {
         width: 100%;
     }
 
-    ..work__projects {
+    .work__projects {
         margin: 0;
     }
 
