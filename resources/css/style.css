@@ -414,6 +414,10 @@ p {
     flex-wrap: wrap;
 }
 
+.work__projects h2 {
+    margin-top: 30px;
+}
+
 .work__projects.work__animation {
     opacity: 0.6;
     transform: scale(0.96) translateY(40px);
@@ -471,7 +475,7 @@ p {
     color: var(--color-orange);
 }
 
-.project__description span:before {
+.project__description span:first-of-type:before {
     content: "";
     display: block;
     position: relative;
@@ -629,6 +633,10 @@ p {
 
     .work__projects {
         margin: 0;
+    }
+
+    .work__projects h2 {
+        font-size: var(--font-large);
     }
 
     .project {
