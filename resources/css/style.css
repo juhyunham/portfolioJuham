@@ -405,14 +405,16 @@ p {
 }
 
 .work__projects {
-  margin: 10px 100px 30px;
+  max-width: 1280px;
+  margin: 10px auto 30px;
   opacity: 1;
   transition: all var(--animation-duration) ease-out;
 }
 
 .work__projects .projects {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 10px;
 }
 
 .work__projects h2 {
@@ -424,9 +426,9 @@ p {
   margin-top: 0;
 }
 
-.work__projects h3 {
+.work__projects .work__projects-company {
   font-size: var(--font-medium);
-  margin-top: 56px;
+  margin: 56px 0 26px;
 }
 
 .work__projects.work__animation {
@@ -437,9 +439,7 @@ p {
 .project {
   overflow: hidden;
   position: relative;
-  width: 200px;
   height: 250px;
-  margin: 20px 0 0 10px;
   background-color: var(--color-white);
   border: 1px solid #c9c9c9;
   border-radius: 5px;
@@ -502,11 +502,6 @@ p {
   display: block;
   max-width: 550px;
   margin: 0 auto;
-}
-
-.projects__github a:hover img {
-  transform: scale(1.12);
-  transition: all 0.5s;
 }
 
 .projects__github img {
@@ -660,12 +655,16 @@ p {
     margin: 0;
   }
 
+  .work__projects .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .work__projects h2,
-  .work__projects h3 {
+  .work__projects .work__projects-company {
     font-size: var(--font-large);
   }
 
-  .work__projects h2 + h3 {
+  .work__projects h2 + .work__projects-company {
     margin-top: 0;
   }
 
@@ -691,5 +690,11 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .work__projects .projects {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
